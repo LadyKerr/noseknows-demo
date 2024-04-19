@@ -18,6 +18,20 @@ knn.fit(notes_matrix)
 
 
 def recommend_perfumes(liked_perfumes, num_recs=5):
+    """
+    Recommends perfumes based on the user's liked perfumes.
+
+    Args:
+        liked_perfumes (list): A list of names of perfumes that the user likes.
+        num_recs (int, optional): The number of recommended perfumes to return. Defaults to 5.
+
+    Returns:
+        dict: A dictionary containing the recommended perfumes and their details.
+
+    Raises:
+        KeyError: If a perfume in `liked_perfumes` is not found in the database.
+
+    """
     name_to_index = {name: idx for idx, name in perfume_df['Name'].items()}
 
     indices = []

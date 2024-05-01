@@ -1,9 +1,6 @@
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.neighbors import NearestNeighbors
-import warnings
-
-warnings.filterwarnings("ignore", category=UserWarning)
 
 perfume_df = pd.read_csv('../data/final_perfume_data.csv', encoding='unicode_escape')
 perfume_df['Notes'].fillna('unknown', inplace=True)

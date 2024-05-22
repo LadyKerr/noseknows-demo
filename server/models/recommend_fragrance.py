@@ -18,6 +18,26 @@ knn.fit(notes_matrix)
 
 
 def recommend_perfumes(liked_perfumes, num_recs=5):
+    """
+    Recommends perfumes based on the user's liked perfumes.
+
+    Args:
+        liked_perfumes (list): A list of perfume names that the user liked.
+        num_recs (int, optional): The number of recommended perfumes to return. Defaults to 5.
+
+    Returns:
+        dict: A dictionary containing the recommended perfumes and their details.
+            The dictionary has the following structure:
+            {
+                "rec_perfumes": [list of recommended perfume names],
+                "rec_perfumes_details": [list of dictionaries containing recommended perfume details]
+            }
+            Each dictionary in "rec_perfumes_details" contains the following keys:
+            - "Name": The name of the recommended perfume.
+            - "Image URL": The URL of the perfume's image.
+            - "Description": The description of the perfume.
+            - "Notes": The notes of the perfume.
+    """
     name_to_index = {name: idx for idx, name in perfume_df['Name'].items()}
 
     indices = []
